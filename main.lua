@@ -3,68 +3,8 @@
     # Rewriten by: eclipse_wtf
 ]]
 
-if Drawing == nil then
-    Drawing = {}
-
-    Drawing.clear = function()
-
-    end
-    Drawing.new = function(type)
-        if type == "Line" then
-            local properties = {
-                ["Transparency"] = 1;
-                ["Thickness"] = 1;
-                ["From"] = Vector2.new(0,0);
-                ["To"] = Vector2.new(0,0);
-            }
-
-            return properties
-        elseif type == "Text" then
-            local properties = {
-                ["Text"] = "";
-                ["Transparency"] = 1;
-                ["Size"] = 1;
-                ["Center"] = true;
-                ["Outline"] = true;
-                ["OutlineColor"] = Color3.fromRGB(255, 255, 255);
-                ["Position"] = Vector2.new(0,0);
-                ["TextBounds"] = Vector2.new(0,0);
-                ["Font"] = 1;
-            }
-
-            return properties
-        elseif type == "Circle" then
-            local properties = {
-                ["Transparency"] = 1;
-                ["Thickness"] = 1;
-                ["NumSides"] = 1;
-                ["Radius"] = 1;
-                ["Filled"] = false;
-                ["Position"] =  Vector2.new(0,0);
-            }
-            return properties
-        elseif type == "Square" then
-            local properties = {
-                ["Transparency"] = 1;
-                ["Thickness"] = 1;
-                ["Size"] = Vector2.new(0,0);
-                ["Position"] = Vector2.new(0,0);
-                ["Filled"] = false;
-            }
-            return properties
-        elseif type == "Triangle" then
-            local properties = {
-                ["Transparency"] = 1;
-                ["Thickness"] = 1;
-                ["PointA"] = Vector2.new(0,0);
-                ["PointB"] = Vector2.new(0,0);
-                ["PointC"] = Vector2.new(0,0);
-                ["Filled"] = false;
-            }
-            return properties
-        end
-    end
-end
+getgenv().Drawing = Drawing
+getgenv().Drawing.new = Drawing.new
 repeat
     task.wait()
  until game:IsLoaded()
