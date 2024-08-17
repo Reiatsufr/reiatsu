@@ -2,7 +2,7 @@
 --[[
     # Rewriten by: eclipse_wtf
 ]]
-
+local DrawingNew = Drawing.New
 repeat
     task.wait()
  until game:IsLoaded()
