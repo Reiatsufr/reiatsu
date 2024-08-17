@@ -3,8 +3,7 @@
     # Rewriten by: eclipse_wtf
 ]]
 
-getgenv().Drawing = Drawing
-getgenv().Drawing.new = Drawing.new
+
 repeat
     task.wait()
  until game:IsLoaded()
@@ -530,7 +529,26 @@ repeat
  
             draggable(menu.bg)
                 InputService.MouseIconEnabled = false
-                local Cursor = Drawing.New('Triangle');Cursor.Thickness = 1;Cursor.Filled = true;Cursor.Visible = true;Cursor.ZIndex = math.huge;local CursorOutline = Drawing.New('Triangle');CursorOutline.Thickness = 1;CursorOutline.Filled = false;CursorOutline.Color = Color3.new(0, 0, 0);CursorOutline.Visible = true;CursorOutline.ZIndex = math.huge
+                -- Check if Drawing and Drawing.New exist
+if Drawing and Drawing.New then
+    -- Create the cursor using the Drawing API
+    local Cursor = Drawing.New('Triangle')
+    Cursor.Thickness = 1
+    Cursor.Filled = true
+    Cursor.Visible = true
+    Cursor.ZIndex = math.huge
+    
+    local CursorOutline = Drawing.New('Triangle')
+    CursorOutline.Thickness = 1
+    CursorOutline.Filled = false
+    CursorOutline.Color = Color3.new(0, 0, 0)
+    CursorOutline.Visible = true
+    CursorOutline.ZIndex = math.huge
+else
+    -- Handle the case where Drawing is not available
+    warn("Drawing API is not available. Cursor will not be created.")
+end
+
                 function cursorupdate()
                     local mPos = InputService:GetMouseLocation();
                     Cursor.Color = library.Colors.libColor;Cursor.PointA = Vector2.new(mPos.X, mPos.Y);Cursor.PointB = Vector2.new(mPos.X + 16, mPos.Y + 6);Cursor.PointC = Vector2.new(mPos.X + 6, mPos.Y + 16) CursorOutline.PointA = Cursor.PointA;CursorOutline.PointB = Cursor.PointB;CursorOutline.PointC = Cursor.PointC;RunService.RenderStepped:Wait() end task.spawn(function() while true do cursorupdate() end
