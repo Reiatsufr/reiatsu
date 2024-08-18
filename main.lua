@@ -298,8 +298,7 @@ repeat
  end
  
  local library = {
-    local Title = 'dababy.<font color="rgb(151, 193, 252)">hub</font> || ' .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-
+    Title = 'dababy.<font color="rgb(151, 193, 252)">hub</font> || ' .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
     keybind = Enum.KeyCode.RightBracket,
     Watermark = createWatermark(),
        Colors = {
