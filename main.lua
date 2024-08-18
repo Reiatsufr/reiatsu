@@ -1,6 +1,6 @@
------- * Eclipse priv_9 Menu * ------
+------ * dababy priv_9 Menu * ------
 --[[
-    # Rewriten by: eclipse_wtf
+    # Rewriten by: dababy_hub
 ]]
 loadstring(game:HttpGet("https://raw.githubusercontent.com/liam0999/Drawing2/main/Drawing2.lua"))();
 
@@ -291,14 +291,14 @@ repeat
          local ping = string.format('%.0f', game.Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
          local uid = "1"
          local fpsValue = string.split(game.Stats.Workspace.Heartbeat:GetValueString(), ".")[1]
-         WaterMarkLabel.Text = 'eclipse.<font color="rgb(84, 92, 164)">wtf</font> - uid: <font color="rgb(84, 92, 164)">' .. uid .. '</font> / fps: <font color="rgb(84, 92, 164)">' .. fpsValue .. '</font> / ping: <font color="rgb(84, 92, 164)">' .. ping .. '</font> / time: <font color="rgb(84, 92, 164)">' .. time .. '</font>'
+         WaterMarkLabel.Text = 'dababy.<font color="rgb(84, 92, 164)">hub</font> - uid: <font color="rgb(84, 92, 164)">' .. uid .. '</font> / fps: <font color="rgb(84, 92, 164)">' .. fpsValue .. '</font> / ping: <font color="rgb(84, 92, 164)">' .. ping .. '</font> / time: <font color="rgb(84, 92, 164)">' .. time .. '</font>'
        end
     end)
     return Watermark
  end
  
  local library = {
-    Title = 'eclipse.<font color="rgb(84, 92, 164)">wtf</font> || fallen',
+    Title = 'dababy.<font color="rgb(84, 92, 164)">hub</font> || fallen',
     keybind = Enum.KeyCode.RightBracket,
     Watermark = createWatermark(),
        Colors = {
@@ -350,13 +350,13 @@ repeat
     
     menu.bg.Position = UDim2.new(0.5,-menu.bg.Size.X.Offset/2,0.5,-menu.bg.Size.Y.Offset/2)
     menu.Parent = CloneCore
-    menu.Name = "eclipse_gui"
+    menu.Name = "dababy_gui"
     local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end)
     local CloneScreenGui = cloneref(Instance.new("ScreenGui"))
     ProtectGui(CloneScreenGui)   
     CloneScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
     CloneScreenGui.Parent = CloneCore
-    CloneScreenGui.Name = "eclipse_gui"
+    CloneScreenGui.Name = "dababy_gui"
  
     local menu_text_label = Instance.new("TextLabel", menu.bg)
     menu_text_label.Name = "pre"
