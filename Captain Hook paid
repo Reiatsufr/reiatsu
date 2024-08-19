@@ -529,23 +529,7 @@ repeat
  
             draggable(menu.bg)
                 InputService.MouseIconEnabled = false
-                function cursorupdate()
-                    local mPos = InputService:GetMouseLocation();
-                    Cursor.Color = library.Colors.libColor;Cursor.PointA = Vector2.new(mPos.X, mPos.Y);Cursor.PointB = Vector2.new(mPos.X + 16, mPos.Y + 6);Cursor.PointC = Vector2.new(mPos.X + 6, mPos.Y + 16) CursorOutline.PointA = Cursor.PointA;CursorOutline.PointB = Cursor.PointB;CursorOutline.PointC = Cursor.PointC;RunService.RenderStepped:Wait() end task.spawn(function() while true do cursorupdate() end
-                end)
-                InputService.InputEnded:Connect(function(key)
-                if key.KeyCode == library.keybind then 
-                    menu.Enabled = not menu.Enabled;library.scrolling = false;
-                    library.colorpicking = false;
-                    Cursor.Visible = not Cursor.Visible;
-                    InputService.MouseIconEnabled = not InputService.MouseIconEnabled;
-                    CursorOutline.Visible = not CursorOutline.Visible; 
-                    for i,v in next, 
-                        library.toInvis 
-                        do v.Visible = false 
-                        end 
-                    end
-                end)
+
  
                 LPH_NO_VIRTUALIZE(function()
                 function library:Tween(...) TweenService:Create(...):Play() end
