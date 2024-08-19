@@ -528,7 +528,24 @@ repeat
             end           
  
             draggable(menu.bg)
-                InputService.MouseIconEnabled = false
+
+
+            InputService.MouseIconEnabled = true  -- Ensure the cursor is always visible
+
+            InputService.InputEnded:Connect(function(key)
+                if key.KeyCode == library.keybind then 
+                    menu.Enabled = not menu.Enabled  -- Toggle the menu's visibility
+                    library.scrolling = false
+                    library.colorpicking = false
+
+                    -- Since you want the cursor to be always visible, no need to toggle InputService.MouseIconEnabled
+
+                    for i, v in next, library.toInvis do 
+                        v.Visible = false 
+                    end 
+                end
+            end)
+
 
  
                 LPH_NO_VIRTUALIZE(function()
