@@ -723,7 +723,7 @@ do -- Name
             Text = Player.Name
         end
         --
-        SetRenderProperty(Renders.Name, "Text", Text)
+        SetRenderProperty(Renders.Name, "Text", ("[ %s ]"):format(Text))
         SetRenderProperty(Renders.Name, "Position", BoxPosition + Vector2.new(BoxSize.X / 2, -(13 + 4)))
         SetRenderProperty(Renders.Name, "Visible", true)
         SetRenderProperty(Renders.Name, "Color", NameColor)
@@ -732,6 +732,7 @@ do -- Name
         SetRenderProperty(Renders.Name, "Visible", false)
     end
 end
+
 
 
                             --
