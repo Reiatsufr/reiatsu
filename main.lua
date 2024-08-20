@@ -780,19 +780,20 @@ end
                             local DistanceEnabled = ESP.Main.Distance.Enabled
                             local DistanceColor2 = ESP.Main.Distance.Color
                             --
-                            do -- Distance
-                                if DistanceEnabled then
-                                    local DistanceColor, DistanceTransparency = Override or DistanceColor2, ((1 - 0) * TransparencyMultplier)
-                                    --
-                                    SetRenderProperty(Renders.Distance, "Text", ("%s%s"):format(Rounded, Measurement))
-                                    SetRenderProperty(Renders.Distance, "Position", BoxPosition + Vector2.new(BoxSize.X / 2, (BoxSize.Y + 4)))
-                                    SetRenderProperty(Renders.Distance, "Visible", true)
-                                    SetRenderProperty(Renders.Distance, "Color", DistanceColor)
-                                    SetRenderProperty(Renders.Distance, "Transparency", DistanceTransparency)
-                                else
-                                    SetRenderProperty(Renders.Distance, "Visible", false)
-                                end
-                            end
+do -- Distance
+    if DistanceEnabled then
+        local DistanceColor, DistanceTransparency = Override or DistanceColor2, ((1 - 0) * TransparencyMultplier)
+        --
+        SetRenderProperty(Renders.Distance, "Text", ("[ %s%s ]"):format(Rounded, Measurement))
+        SetRenderProperty(Renders.Distance, "Position", BoxPosition + Vector2.new(BoxSize.X / 2, (BoxSize.Y + 4)))
+        SetRenderProperty(Renders.Distance, "Visible", true)
+        SetRenderProperty(Renders.Distance, "Color", DistanceColor)
+        SetRenderProperty(Renders.Distance, "Transparency", DistanceTransparency)
+    else
+        SetRenderProperty(Renders.Distance, "Visible", false)
+    end
+end
+
                             --
                             do -- Weapon
                                 local WeaponEnabled = ESP.Main.Tool.Enabled
