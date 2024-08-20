@@ -709,29 +709,31 @@ end
                         end
                         --
                         if BoxSize and BoxPosition then
-                            do -- Name
-                                local NameEnabled = ESP.Main.Name.Enabled
-                                --
-                                if NameEnabled then
-                                    local NameColor, NameTransparency = Override or ESP.Main.Name.Color, ((1 - 0) * TransparencyMultplier)
-                                    --
-                                    local Text
-                                    --
-                                    if ESP.Extra.UseDisplayName then
-                                        Text = ((Player.DisplayName ~= nil and Player.DisplayName ~= "" and Player.DisplayName ~= " ") and Player.DisplayName or Player.Name)
-                                    else
-                                        Text = Player.Name
-                                    end
-                                    --
-                                    SetRenderProperty(Renders.Name, "Text", Text)
-                                    SetRenderProperty(Renders.Name, "Position", BoxPosition + Vector2.new(BoxSize.X / 2, -(13 + 4)))
-                                    SetRenderProperty(Renders.Name, "Visible", true)
-                                    SetRenderProperty(Renders.Name, "Color", NameColor)
-                                    SetRenderProperty(Renders.Name, "Transparency", NameTransparency)
-                                else
-                                    SetRenderProperty(Renders.Name, "Visible", false)
-                                end
-                            end 
+do -- Name
+    local NameEnabled = ESP.Main.Name.Enabled
+    --
+    if NameEnabled then
+        local NameColor, NameTransparency = Override or ESP.Main.Name.Color, ((1 - 0) * TransparencyMultplier)
+        --
+        local Text
+        --
+        if ESP.Extra.UseDisplayName then
+            Text = ((Player.DisplayName ~= nil and Player.DisplayName ~= "" and Player.DisplayName ~= " ") and Player.DisplayName or Player.Name)
+        else
+            Text = Player.Name
+        end
+        --
+        SetRenderProperty(Renders.Name, "Text", Text)
+        SetRenderProperty(Renders.Name, "Position", BoxPosition + Vector2.new(BoxSize.X / 2, -(13 + 4)))
+        SetRenderProperty(Renders.Name, "Visible", true)
+        SetRenderProperty(Renders.Name, "Color", NameColor)
+        SetRenderProperty(Renders.Name, "Transparency", NameTransparency)
+    else
+        SetRenderProperty(Renders.Name, "Visible", false)
+    end
+end
+
+
                             --
                             do -- HeatlhBar
                                 local HealthBarColor1, HealthBarTransparency = ESP.Main.HealthBar.HighHealthColor, ((1 - 0) * TransparencyMultplier)
