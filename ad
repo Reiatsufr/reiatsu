@@ -268,6 +268,10 @@ function Library:Window(Name, Color, SizeY)
             Section.Size = UDim2.new(0, 235, 0, 247)
             Section.ZIndex = 0
             Section.Visible = false
+            
+            local SectionCorner = Instance.new("UICorner")
+            SectionCorner.CornerRadius = UDim.new(0, 8)  -- Adjust the corner radius as needed
+            SectionCorner.Parent = Section
 
             SectionContents.Name = "Contents"
             SectionContents.Parent = Section
