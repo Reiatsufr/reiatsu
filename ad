@@ -268,7 +268,7 @@ function Library:Window(Name, Color, SizeY)
             Section.Size = UDim2.new(0, 235, 0, 247)
             Section.ZIndex = 0
             Section.Visible = false
-            
+
             local SectionCorner = Instance.new("UICorner")
             SectionCorner.CornerRadius = UDim.new(0, 8)  -- Adjust the corner radius as needed
             SectionCorner.Parent = Section
@@ -281,18 +281,21 @@ function Library:Window(Name, Color, SizeY)
             SectionContents.Position = UDim2.new(0.0278463159, 0, 0.0322874375, 0)
             SectionContents.Size = UDim2.new(0, 220, 0, 84)
 
-            SectionTitle.Name = "Title"
-            SectionTitle.Parent = SectionContents
-            SectionTitle.BackgroundColor3 = Color3.new(1, 1, 1)
-            SectionTitle.BackgroundTransparency = 1
-            SectionTitle.Position = UDim2.new(0.0260000005, 0, -1.05768967, 0)
-            SectionTitle.Size = UDim2.new(0, 178, 0, 12)
-            SectionTitle.Font = Enum.Font.Code
-            SectionTitle.Text = Name
-            SectionTitle.TextColor3 = Color3.new(1, 1, 1)
-            SectionTitle.TextSize = 14
-            SectionTitle.TextStrokeTransparency = 0.4
-            SectionTitle.TextXAlignment = Enum.TextXAlignment.Left
+local Title = Instance.new("TextLabel")
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.new(0.0509804, 0.0509804, 0.0509804)
+Title.BackgroundTransparency = 1 -- Make background transparent to blend with the frame
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0, 0, 0, 0) -- Position it at the top
+Title.Size = UDim2.new(1, 0, 0, 30) -- Full width, 30 pixels height for the title area
+Title.Font = Enum.Font.Code
+Title.Text = Name -- Set the name of the window as the title
+Title.TextSize = 14
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.TextStrokeTransparency = 0.4
+Title.TextXAlignment = Enum.TextXAlignment.Center -- Center-align the title text horizontally
+Title.TextYAlignment = Enum.TextYAlignment.Center -- Center-align the title text vertically
 
             SectionListLayout.Parent = SectionContents
             SectionListLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -415,14 +418,13 @@ function Library:Window(Name, Color, SizeY)
                 TextButton.TextStrokeTransparency = 0
 
                 Main.Name = "Main"
-                Main.Parent = Color
-                Main.BackgroundColor3 = Color3.new(1, 1, 1)
-                Main.BackgroundTransparency = 1
-                Main.BorderSizePixel = 0
-                Main.ClipsDescendants = true
-                Main.Position = UDim2.new(0.562814057, 0, 1.61538458, 0)
-                Main.Size = UDim2.new(0, 111, 0, 0)
-                Main.Visible = false
+                Main.Parent = Drag
+                Main.Active = true
+                Main.BackgroundColor3 = Color3.new(0.0509804, 0.0509804, 0.0509804)
+                Main.BorderColor3 = Color3.new(0, 0, 0)
+                Main.Position = UDim2.new(-0.001, 0, 0, 0) -- Adjust position to start at the top
+                Main.Size = UDim2.new(0, 513, 0, SizeY + 30) -- Increase the height by 30 pixels for the title
+                
 
                 Picker.Name = "Picker"
                 Picker.Parent = Main
